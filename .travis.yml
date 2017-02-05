@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - node
 script:
-  - 'npm run build && git commit -am "build" && git push'
+  - 'npm run build'
 deploy:
   provider: s3
   local_dir: dist
