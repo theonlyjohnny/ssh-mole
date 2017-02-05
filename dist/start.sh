@@ -43,7 +43,15 @@ updateNode(){
 
 runMole(){
     # node ./classes/ssh.js
-    node ./index.js
+    if [ -f "./bundle.js" ];
+    then 
+        node ./bundle.js
+    elif [ -f "./index.js" ]; then 
+        node ./index.js
+    else
+        echo "no bundle.js nor index.js found"
+        exit 1
+    fi
 }
 
 if hasNode; then
