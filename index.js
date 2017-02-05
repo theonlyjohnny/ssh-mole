@@ -14,7 +14,7 @@ const ngrok = new _ngrok();
 
 
 process.on("uncaughtException", (err) => {
-  console.log(colors.red(error));
+  console.log(colors.red(err));
 })
 
 SSH.start(() => {
