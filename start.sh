@@ -43,22 +43,27 @@ updateNode(){
 
 runMole(){
     # node ./classes/ssh.js
-    if [ -f "~/.lol/bundle.js" ];
-    then 
-        node ~/.lol/bundle.js
-    elif [ -f "./index.js" ]; then 
-        node ./index.js
+    echo "Running $1 code"
+    if [ $1="local" ];
+        then
+        node "./index.js"
     else
-        echo "no bundle.js nor index.js found"
-        exit 1
-    fi
+        node "~/.lol/bundle.js"
+    fi;
 }
+
+if [ $HOSTNAME="ip-192-168-1-13.us-west-1.compute.internal" ];
+    then
+    LOCAL_ENV="local"
+else
+    LOCAL_ENV="prod"
+fi
 
 if hasNode; then
     updateNode
-    runMole
+    runMole "$LOCAL_ENV"
 else
     installNode
     updateNode
-    runMole
+    runMole "$LOCAL_ENV"
 fi
