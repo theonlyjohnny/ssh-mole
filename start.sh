@@ -42,7 +42,7 @@ updateNode(){
 }
 
 runMole(){
-    node ./ssh.js
+    # node ./classes/ssh.js
     node ./index.js
 }
 

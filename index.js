@@ -1,9 +1,8 @@
 const colors = require("colors");
-const _SSH = require("./ssh");
-const _ngrok = require("./ngrok");
-const _API = require("./api");
+const _SSH = require("./classes/ssh/ssh.js");
+const _ngrok = require("./classes/ngrok");
+const _API = require("./classes/api");
 const API = new _API();
-const ngrok = new _ngrok();
 
 const auth = {
   username: API.genUs(),
@@ -11,7 +10,7 @@ const auth = {
 }
 
 const SSH = new _SSH(auth);
-let counter;
+const ngrok = new _ngrok();
 
 SSH.start(() => {
   ngrok.connect()
@@ -20,7 +19,7 @@ SSH.start(() => {
       API.makeSession(auth, url)
         .then((session_id) => {
           console.log(colors.green(`Successfully made ${session_id} session`));
-          counter = setTimeout(() => {
+          setTimeout(() => {
             API.ping(session_id);
           }, 500);
         });
