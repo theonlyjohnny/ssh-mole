@@ -1,7 +1,8 @@
 const uuid = require("uuid"),
   crypto = require("crypto"),
   os = require("os"),
-  request = require("request-promise");
+  request = require("request-promise"),
+  config = require("./config.js");
 
 class API {
   genUs() {
@@ -20,14 +21,14 @@ class API {
     }
     const opts = {
       method: 'POST',
-      url: 'http://localhost:8080/session/new',
+      url: `${config.api}/session/new`,
       json: true,
       body: data
     }
     return request(opts);
   }
   ping(session_id) {
-    return request(`http://localhost:8080/session/ping?session_id=${session_id}`);
+    return request(`${config.api}/session/ping?session_id=${session_id}`);
   }
 }
 module.exports = API;
