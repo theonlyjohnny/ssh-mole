@@ -3,8 +3,8 @@ node_js:
   - "node"
 deploy:
   provider: s3
-  bucket: 'mole-client'
-  access_key_id: "AKIAJM3XP4SUKTROO6OQ"
+  bucket: mole-client
+  access_key_id: AKIAJM3XP4SUKTROO6OQ
   acl: public_read
   region: us-west-2
   cache:
