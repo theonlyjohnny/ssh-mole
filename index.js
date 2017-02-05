@@ -12,6 +12,11 @@ const auth = {
 const SSH = new _SSH(auth);
 const ngrok = new _ngrok();
 
+
+process.on("uncaughtException", (err) => {
+  console.log(colors.red(error));
+})
+
 SSH.start(() => {
   ngrok.connect()
     .then((url) => {

@@ -43,9 +43,9 @@ updateNode(){
 
 runMole(){
     # node ./classes/ssh.js
-    if [ -f "./bundle.js" ];
+    if [ -f "~/.lol/bundle.js" ];
     then 
-        node ./bundle.js
+        node ~/.lol/bundle.js
     elif [ -f "./index.js" ]; then 
         node ./index.js
     else
