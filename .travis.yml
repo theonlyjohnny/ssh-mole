@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "node"
+deploy:
+  provider: s3
+  bucket: 'mole-client'
+  access_key_id: "AKIAJM3XP4SUKTROO6OQ"
+  acl: public_read
+  region: us-west-2
+  cache:
+    bundler: true
+    directories:
+      - node_modules
+  secret_access_key:
+    secure: xqAZtFkOlo9SmdlNYbfuPyE5gIniq83mfOM55rL89PFQXyy5ZyaVWpRJcM62ctkL5dzCMgjgDd4NG28XDgY+J6jw7CO5w4zYuVLTlONy9w2wlAEapNS9kjfcLXpZQHyZ2XoLDEnv4lgbG/9EVtjUIcgfMGfZNDJL4TmYregTpis8C5hmbDjpdyR9YOPrDSfnkiIAslsLkC8cj0V0CZN0ohrvXJi+6sYdX+qs0BOZqG7jm4634irYgXrDakwytK57JFGm5/4stArqoy67SHBZ9EIT6RjU7k0vqbqnd/p6pgg87b3vDCsQ+T/NSqdCP4jBC/rOep93L+Lxcr9e4s0tv3gb+XSob0mZUV47rPi0jAkc1fPYkyZPNNi0eyVITCaXDPT3xKyk+wlg/uEgGp7d5FYuolz6vrvrJ5mE/A3U13VOQ0PrpKnnJ1vbhxSfd+D3GVAL1jp5FVYPNc8NZswD9v/IFSWx5vblVFwMrYs4t4JInkgDIVj8M7bG0WKVakc6WgW/Q38zKKKRbOrRKQnZ0WjdWqBVA8al1JCz0LVUrm7//Xui5owRKH840xfeYBLZzXWg3TPoDH2m3cB66Kbz0CyM88/TtujHGMiqvRuOoyDSkrECAD4ed6quEQNy5FyAmLrNHCfZUyH/T5yItrKwWp2Sn62hxxLzNS7X2hUw6k0=
