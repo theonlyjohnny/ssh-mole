@@ -12,6 +12,7 @@ deploy:
   region: us-west-2
   on:
     repo: theonlyjohnny/ssh-mole
+    all_branches: true
   cache:
     bundler: true
     directories:
