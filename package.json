@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "./start.sh",
-    "build": "npm run clear && webpack --config ./cfg/webpack.config.js",
-    "clear": "rm -rf ./dist"
+    "build": "npm run clear && webpack --config ./cfg/webpack.config.js && npm run copy",
+    "clear": "rm -rf ./dist",
+    "copy": "cp ./start.sh ./dist/start.sh"
   },
   "author": "",
   "license": "ISC",
